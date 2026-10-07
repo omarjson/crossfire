@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+frontend/dist/
+backend/static/   # built by Docker, not committed
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# local data + secrets
+*.db
+*.db-shm
+*.db-wal
+.env
+.env.local
+
+# os
+.DS_Store
+Thumbs.db
+
+# preview screenshots (local only)
+preview/
+preview-reskin/
+preview-v2/

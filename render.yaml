@@ -1,0 +1,16 @@
+# Render blueprint (alternative to Fly.io).
+services:
+  - type: web
+    name: crossfire
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: CROSSFIRE_LLM
+        value: tokenfactory
+      - key: CROSSFIRE_TAVILY
+        value: keyless
+      - key: NEBIUS_API_KEY
+        sync: false
+      - key: TAVILY_API_KEY
+        sync: false

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#1a1a1a"/>
+  <text x="32" y="42" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="bold" fill="#e8a020" text-anchor="middle">CF</text>
+  <line x1="18" y1="46" x2="46" y2="46" stroke="#e8a020" stroke-width="2" stroke-linecap="round"/>
+</svg>
