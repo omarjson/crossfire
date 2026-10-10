@@ -13,6 +13,7 @@ from fastapi.staticfiles import StaticFiles
 
 from .api.routes import router
 from .config import settings
+from .rate_limit import DebateRateLimitMiddleware
 
 log = logging.getLogger("crossfire")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
@@ -29,6 +30,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Per-IP rate limit on debate creation (public demo protection).
+app.add_middleware(DebateRateLimitMiddleware)
 
 
 @app.middleware("http")
@@ -68,3 +72,4 @@ if os.path.isdir(STATIC_DIR):
         if path and os.path.isfile(candidate):
             return FileResponse(candidate)
         return FileResponse(os.path.join(STATIC_DIR, "index.html"))
+
